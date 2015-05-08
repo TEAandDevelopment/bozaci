@@ -3,8 +3,18 @@ var myApp = angular.module('myApp', [
   'ngCookies'
 ]);
 
-myApp.config(['$routeProvider',
-  function($routeProvider) {
+myApp.config(['$routeProvider', "$rootScope",
+  function ($routeProvider, $rootScope) {
+
+      //$rootScope.$on('$stateChangeStart', function (e, toState, toParams, fromState, fromParams) {
+      //    var isLoggedIn = AuthService.isLoggedIn();
+      //    if (toState.name == "login" && isLoggedIn) {
+      //        e.preventDefault();
+      //        $state.go('dashboard')
+      //    }
+      //});
+
+
       $routeProvider.
         when('/', {
             templateUrl: 'views/partial/index.html',
